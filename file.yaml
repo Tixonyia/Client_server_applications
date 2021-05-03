@@ -1,0 +1,9 @@
+first:
+- string
+- notstring
+second: 12312
+third:
+  board: 5€-50€
+  computer: 200€-1000€
+  lither: 4€-7€
+  printers: 100€-3
