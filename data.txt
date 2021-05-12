@@ -1,0 +1,3 @@
+<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 7777)>
+{'action': 'authenticate', 'time': '<unix timestamp>', 'user': {'account_name': 'WildCate', 'password': 'Think'}}
+{'response': 200, 'alert': 'Не очень нужное сообщение'}

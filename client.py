@@ -1,7 +1,7 @@
 from socket import *
 import pickle
 
-s = socket(AF_INET,SOCK_STREAM)
+s = socket(AF_INET, SOCK_STREAM)
 s.connect(('localhost', 7777))
 msg = {
     "action": "authenticate",
@@ -13,5 +13,6 @@ msg = {
 }
 s.send(pickle.dumps(msg))
 data = s.recv(1024)
-print(f"Сообщение от сервера: {pickle.loads(data)}")
+msg_server = pickle.loads(data)
+print(f"Сообщение от сервера: {msg_server}")
 s.close()
