@@ -15,7 +15,7 @@ while True:
     }
     client.send(pickle.dumps(response))
     client.close()
-    with open('data.txt', 'w') as dat:
+    with open('tests/data.txt', 'w') as dat:
         dat.write(str(s) + '\n')
         dat.write(str(pickle.loads(data)) + '\n')
         dat.write(str(response) + '\n')
