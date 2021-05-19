@@ -1,26 +1,30 @@
-from socket import *
+from socket import socket, AF_INET, SOCK_STREAM
 import pickle
 import logging
 import log.client_log_config
+from decorators import log_dec
+
 
 logger = logging.getLogger('client')
+logger.debug('Start client successfully')
 
-
-def client():
-    try:
-
-        logger.debug('Start client successfully')
-
-        s = socket(AF_INET, SOCK_STREAM)
-        s.connect(('localhost', 7777))
-        msg = {
-            "action": "authenticate",
-            "time": "<unix timestamp>",
-            "user": {
-                "account_name": "WildCate",
-                "password": "Think"
+s = socket(AF_INET, SOCK_STREAM)
+s.connect(('localhost', 7777))
+msg = {
+        "action": "authenticate",
+        "time": "<unix timestamp>",
+        "user": {
+            "account_name": "WildCate",
+            "password": "Think"
             }
         }
+
+msg_server = None
+
+
+@log_dec
+def client():
+    try:
         s.send(pickle.dumps(msg))
         data = s.recv(1024)
         msg_server = pickle.loads(data)
@@ -31,5 +35,4 @@ def client():
         logger.critical('Boss, ull disappeared!!!')
 
 
-if __name__ == '__main__':
-    client()
+client()

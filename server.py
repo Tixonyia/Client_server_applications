@@ -1,10 +1,14 @@
 import logging
 from socket import SOCK_STREAM, AF_INET, socket
 import pickle
+from decorators import log_dec
 import log.server_log_config
 
 logger = logging.getLogger('server')
+logger.debug('Start server successfully')
 
+
+@log_dec
 def server():
     try:
         s = socket(AF_INET, SOCK_STREAM)
@@ -33,5 +37,5 @@ def server():
         logger.critical('Boss, ull disappeared!!!')
 
 
-if __name__ == '__main__':
+if __name__ == 'mane':
     server()

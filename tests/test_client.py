@@ -1,5 +1,7 @@
 import pytest
-from client import s,  msg, msg_server
+import os
+
+from client_file import s,  msg, msg_server
 
 
 def test_socket_family():
