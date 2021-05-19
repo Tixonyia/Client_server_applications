@@ -1,7 +1,9 @@
-from socket import *
+from socket import socket, AF_INET, SOCK_STREAM
 import pickle
 import logging
 import log.client_log_config
+from decorators import log_dec
+
 
 logger = logging.getLogger('client')
 logger.debug('Start client successfully')
@@ -19,9 +21,8 @@ msg = {
 
 msg_server = None
 
-def print():
-     print('asdf')
 
+@log_dec
 def client():
     try:
         s.send(pickle.dumps(msg))
@@ -32,7 +33,6 @@ def client():
         logger.debug('App client ending')
     except:
         logger.critical('Boss, ull disappeared!!!')
-
 
 
 client()
