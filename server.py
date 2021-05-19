@@ -1,22 +1,37 @@
-from socket import *
+import logging
+from socket import SOCK_STREAM, AF_INET, socket
 import pickle
+import log.server_log_config
 
-s = socket(AF_INET, SOCK_STREAM)
-s.bind(('', 7777))
-s.listen(5)
+logger = logging.getLogger('server')
+
+def server():
+    try:
+        s = socket(AF_INET, SOCK_STREAM)
+        s.bind(('', 7777))
+        s.listen(5)
+
+        while True:
+            logger.debug('Start server successfully')
+            client, addr = s.accept()
+            data = client.recv(1024)
+            response = {
+                'response': 200,
+                'alert': 'Не очень нужное сообщение'
+            }
+            client.send(pickle.dumps(response))
+            client.close()
+            logger.debug('App server ending')
+            logger.debug('Save in data start')
+            with open('tests/data.txt', 'w') as dat:
+                dat.write(str(s) + '\n')
+                dat.write(str(pickle.loads(data)) + '\n')
+                dat.write(str(response) + '\n')
+            logger.debug('Save in data end')
+
+    except:
+        logger.critical('Boss, ull disappeared!!!')
 
 
-while True:
-    client, addr = s.accept()
-    data = client.recv(1024)
-    response = {
-        'response': 200,
-        'alert': 'Не очень нужное сообщение'
-    }
-    client.send(pickle.dumps(response))
-    client.close()
-    with open('tests/data.txt', 'w') as dat:
-        dat.write(str(s) + '\n')
-        dat.write(str(pickle.loads(data)) + '\n')
-        dat.write(str(response) + '\n')
-
+if __name__ == '__main__':
+    server()
