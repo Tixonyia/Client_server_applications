@@ -1,11 +1,11 @@
 import pytest
 import re
 
+
 with open('data.txt') as file:
     s, msg, response = file.read().splitlines()
     family = re.search(r'family=\w*\S\w*', s).group(0)
     type_s = re.search(r'type=\w*\S\w*', s).group(0)
-    print(msg)
 
 
 def test_socket_family():

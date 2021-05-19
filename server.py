@@ -4,6 +4,8 @@ import pickle
 import log.server_log_config
 
 logger = logging.getLogger('server')
+logger.debug('Start server successfully')
+
 
 def server():
     try:
@@ -33,5 +35,4 @@ def server():
         logger.critical('Boss, ull disappeared!!!')
 
 
-if __name__ == '__main__':
-    server()
+server()
