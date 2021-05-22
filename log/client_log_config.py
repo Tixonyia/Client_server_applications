@@ -1,13 +1,14 @@
 import logging
 import os.path
 
-logger = logging.getLogger('client')
-formatter = logging.Formatter("%(created)f - %(filename)s - %(levelname)-12s - %(module)-12s - %(message)s ")
-storage = 'logs'
+logger = logging.getLogger('chat.client')
 
-if not os.path.exists(storage):
-    os.mkdir(storage)
-filename = os.path.join(storage, 'client.log')
+formatter = logging.Formatter("%(asctime)s - %(levelname)-8s - %(module)-8s - %(message)s ")
+
+storage_name = 'log-storage'
+if not os.path.exists(storage_name):
+    os.mkdir(storage_name)
+filename = os.path.join(storage_name, 'client.log')
 
 fh = logging.FileHandler(filename, encoding='utf-8')
 fh.setLevel(logging.DEBUG)

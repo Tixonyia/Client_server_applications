@@ -1,14 +1,15 @@
 import logging
+import logging.handlers
 import os.path
-from logging import handlers
 
-logger = logging.getLogger('server')
-formatter = logging.Formatter("%(created)f - %(filename)s - %(levelname)-12s - %(module)-12s - %(message)s ")
+logger = logging.getLogger('chat.server')
 
-storage = 'logs'
-if not os.path.exists(storage):
-    os.mkdir(storage)
-filename = os.path.join(storage, 'server.log')
+formatter = logging.Formatter("%(asctime)s - %(levelname)-8s - %(module)-8s - %(message)s ")
+
+storage_name = 'log-storage'
+if not os.path.exists(storage_name):
+    os.mkdir(storage_name)
+filename = os.path.join(storage_name, 'server.log')
 
 fh = logging.handlers.TimedRotatingFileHandler(filename, encoding='utf-8', when='D', interval=1, backupCount=7)
 fh.setLevel(logging.DEBUG)

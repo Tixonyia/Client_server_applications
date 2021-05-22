@@ -1,37 +1,106 @@
 import logging
-from socket import SOCK_STREAM, AF_INET, socket
-import pickle
-import log.server_log_config
+import select
+import chat.chat as chat
+import chat.base as base
 
-logger = logging.getLogger('server')
+logger = logging.getLogger('chat.server')
 
-def server():
-    try:
-        s = socket(AF_INET, SOCK_STREAM)
-        s.bind(('', 7777))
-        s.listen(5)
 
-        while True:
-            logger.debug('Start server successfully')
-            client, addr = s.accept()
-            data = client.recv(1024)
-            response = {
-                'response': 200,
-                'alert': 'Не очень нужное сообщение'
-            }
-            client.send(pickle.dumps(response))
-            client.close()
-            logger.debug('App server ending')
-            logger.debug('Save in data start')
-            with open('tests/data.txt', 'w') as dat:
-                dat.write(str(s) + '\n')
-                dat.write(str(pickle.loads(data)) + '\n')
-                dat.write(str(response) + '\n')
-            logger.debug('Save in data end')
+def mainloop():
+    waiting_counter = 0
+    clients = []
+    clients_info = {}
 
-    except:
-        logger.critical('Boss, ull disappeared!!!')
+    logger.debug('App started')
+
+    parser = chat.create_parser()
+    namespace = parser.parse_args()
+
+    sock = chat.get_server_socket(namespace.addr, namespace.port)
+    server_addr = sock.getsockname()
+    start_info = f'Server started at {server_addr[0]}:{server_addr[1]}'
+    print(start_info)
+    logger.info(start_info)
+
+    while True:
+        messages = []
+
+        try:
+            client, client_addr = sock.accept()
+        except OSError as e:
+            pass
+        else:
+            info = f'Client connected from {client_addr[0]}:{client_addr[1]}'
+            print(info)
+            logger.info(info)
+            client_info = {'name': '', 'addr': client_addr, 'in_messages': []}
+            clients.append(client)
+            clients_info[client] = client_info
+        finally:
+            r = []
+            w = []
+            try:
+                r, w, e = select.select(clients, clients, [], 0)
+            except Exception as e:
+                pass
+
+            for s_client in r:
+                try:
+                    data_in = chat.get_data(s_client)
+                except ConnectionResetError as e:
+                    logger.error(e)
+
+                if clients_info[s_client]['name'] == '':
+                    if data_in['action'] == 'presence' and data_in['user']['account_name'] != '':
+                        clients_info[s_client]['name'] = data_in['user']['account_name']
+                        base.RESPONSE['response'], base.RESPONSE['alert'] = base.SERV_RESP[0]
+                        print(f'{data_in["time"]} - {data_in["user"]["account_name"]}: {data_in["user"]["status"]}')
+                    else:
+                        base.RESPONSE['response'], base.RESPONSE['alert'] = base.SERV_RESP[1]
+
+                if clients_info[s_client]['name'] != '' and data_in['action'] == 'msg':
+                    data_in['from'] = clients_info[s_client]["name"]
+                    print(f'{data_in["time"]} - {data_in["from"]}: {data_in["message"]}')
+                    base.RESPONSE['response'], base.RESPONSE['alert'] = base.SERV_RESP[0]
+
+                    messages.append(data_in)
+
+                    if data_in["message"] == 'exit':
+                        base.RESPONSE['response'], base.RESPONSE['alert'] = base.SERV_RESP[2]
+
+                clients_info[s_client]['data_out'] = base.RESPONSE
+
+            for s_client in clients:
+                clients_info[s_client]['in_messages'].extend(messages)
+
+            for s_client in w:
+                if 'data_out' in clients_info[s_client]:
+                    data_out = clients_info[s_client]['data_out']
+                    data_out['messages'] = clients_info[s_client]['in_messages']
+
+                    try:
+                        chat.send_data(s_client, data_out)
+                        clients_info[s_client].pop('data_out')
+                        clients_info[s_client]['in_messages'].clear()
+                    except ConnectionResetError as e:
+                        logger.error(e)
+                        clients.remove(s_client)
+                        clients_info.pop(s_client)
+
+                    if data_out['response'] != '200':
+                        clients.remove(s_client)
+                        clients_info.pop(s_client)
+
+        if len(clients) == 0:
+            waiting_counter += 1
+
+        if waiting_counter > 1200:
+            break
+
+    sock.close()
+
+    logger.debug('App ending')
 
 
 if __name__ == '__main__':
-    server()
+    mainloop()
