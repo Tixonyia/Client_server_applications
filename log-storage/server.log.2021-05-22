@@ -1,0 +1,110 @@
+2021-05-22 15:27:42,315 - DEBUG    - server   - App started 
+2021-05-22 15:27:42,317 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:27:44,511 - DEBUG    - server   - App started 
+2021-05-22 15:27:44,513 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:27:49,107 - DEBUG    - server   - App started 
+2021-05-22 15:27:49,109 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:30:03,718 - DEBUG    - server   - App started 
+2021-05-22 15:30:03,728 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:30:03,730 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 15:31:09,550 - DEBUG    - server   - App started 
+2021-05-22 15:31:09,556 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:31:09,556 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 15:31:36,052 - INFO     - server   - Client connected from 127.0.0.1:54096 
+2021-05-22 15:31:37,054 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:31:37,056 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:31:40,061 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:31:40,063 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:31:43,068 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:31:43,070 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:35:46,539 - INFO     - server   - Client connected from 127.0.0.1:56102 
+2021-05-22 15:35:47,541 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:41:48,795 - DEBUG    - server   - App started 
+2021-05-22 15:41:48,801 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:41:48,802 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 15:42:01,693 - INFO     - server   - Client connected from 127.0.0.1:59150 
+2021-05-22 15:42:02,695 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:02,697 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:42:04,701 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:04,703 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:42:06,707 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:06,709 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:42:13,057 - INFO     - server   - Client connected from 127.0.0.1:59240 
+2021-05-22 15:42:14,059 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:14,062 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:42:16,066 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:16,069 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:42:18,073 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 15:42:18,075 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 15:56:37,149 - DEBUG    - server   - App started 
+2021-05-22 15:56:37,169 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:56:53,410 - DEBUG    - server   - App started 
+2021-05-22 15:56:53,412 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:56:55,371 - DEBUG    - server   - App started 
+2021-05-22 15:56:55,383 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:57:01,920 - DEBUG    - server   - App started 
+2021-05-22 15:57:01,922 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:57:04,753 - DEBUG    - server   - App started 
+2021-05-22 15:57:04,756 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:57:17,469 - DEBUG    - server   - App started 
+2021-05-22 15:57:17,475 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 15:57:17,476 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 15:57:25,868 - INFO     - server   - Client connected from 127.0.0.1:38320 
+2021-05-22 15:57:26,871 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:01:40,893 - DEBUG    - server   - App started 
+2021-05-22 16:01:40,899 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:01:40,900 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:01:58,862 - INFO     - server   - Client connected from 127.0.0.1:40510 
+2021-05-22 16:01:59,864 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:02:38,492 - DEBUG    - server   - App started 
+2021-05-22 16:02:38,499 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:02:38,499 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:02:50,724 - INFO     - server   - Client connected from 127.0.0.1:40930 
+2021-05-22 16:02:51,725 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:04:13,621 - DEBUG    - server   - App started 
+2021-05-22 16:04:13,627 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:04:13,628 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:04:22,228 - INFO     - server   - Client connected from 127.0.0.1:41660 
+2021-05-22 16:04:23,230 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:04:59,884 - DEBUG    - server   - App started 
+2021-05-22 16:04:59,890 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:04:59,891 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:05:11,915 - INFO     - server   - Client connected from 127.0.0.1:42060 
+2021-05-22 16:05:12,917 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:05:55,437 - DEBUG    - server   - App started 
+2021-05-22 16:05:55,443 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:05:55,444 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:06:04,597 - INFO     - server   - Client connected from 127.0.0.1:42486 
+2021-05-22 16:06:05,599 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:12:08,976 - DEBUG    - server   - App started 
+2021-05-22 16:12:08,982 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:12:08,983 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:12:18,318 - INFO     - server   - Client connected from 127.0.0.1:45510 
+2021-05-22 16:12:19,320 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:13:41,505 - DEBUG    - server   - App started 
+2021-05-22 16:13:41,511 - DEBUG    - chat     - Function "get_server_socket" is called into "mainloop" 
+2021-05-22 16:13:41,512 - INFO     - server   - Server started at 127.0.0.1:7777 
+2021-05-22 16:13:48,953 - INFO     - server   - Client connected from 127.0.0.1:46244 
+2021-05-22 16:13:49,955 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:13:49,957 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:13:51,961 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:13:51,963 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:13:55,969 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:13:55,971 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:04,655 - INFO     - server   - Client connected from 127.0.0.1:46374 
+2021-05-22 16:14:05,657 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:05,660 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:08,664 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:08,666 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:12,673 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:12,676 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:14,680 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:14,682 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:18,688 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:18,690 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:21,694 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:21,696 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:14:25,701 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:14:25,705 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 
+2021-05-22 16:15:42,798 - DEBUG    - chat     - Function "get_data" is called into "mainloop" 
+2021-05-22 16:15:42,799 - DEBUG    - chat     - Function "send_data" is called into "mainloop" 

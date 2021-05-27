@@ -2,6 +2,7 @@ import logging
 import select
 import chat.chat as chat
 import chat.base as base
+import log.server_log_config
 
 logger = logging.getLogger('chat.server')
 

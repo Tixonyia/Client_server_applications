@@ -2,6 +2,12 @@ from datetime import datetime
 
 TIME = datetime.now().replace(microsecond=0).isoformat(sep=' ')
 
+GROUPS = {
+    "name": None,
+    "members": [],
+    "message": None
+}
+
 RESPONSE = {
     "response": None,
     "time": str(TIME),
